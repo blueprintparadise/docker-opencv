@@ -1,5 +1,5 @@
 # About
-For running opencv / python in docker with access to video and display of the host computer.
+For running opencv / python in docker with access to video and display of the host computer (Ubuntu). Not tested on windows or Mac.
 
 # Setup
 1) Download the docker image on your PC
