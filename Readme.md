@@ -1,5 +1,5 @@
 # About
-Bleeding edge docker container for CPU only usagage. For running opencv / python in docker with access to web cam and display of the host computer (Ubuntu). 
+Bleeding edge docker container for CPU only useage. For running opencv / python in docker with access to web cam and display of the host computer (Ubuntu). 
 Not tested on windows or Mac.
 ### Current version: (May 2020 - the year of COVID19)
 * Python 3.8.2
@@ -8,7 +8,7 @@ Not tested on windows or Mac.
 * Numpy 1.18.4
 * scipy 1.4.1
 * Matplotlib 3.2.1
-
+* FFmpeg 4.1.4-1
 
 # Setup
 1) Download the docker image on your PC
