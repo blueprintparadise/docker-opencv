@@ -22,6 +22,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install numpy scipy pandas matplotlib
+RUN pip install pafy youtube_dl
 
 WORKDIR /
 ENV OPENCV_VERSION="4.3.0"
