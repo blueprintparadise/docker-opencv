@@ -1,5 +1,6 @@
 # About
 Bleeding edge docker container for CPU only useage. For running opencv / python in docker with access to web cam and display of the host computer (Ubuntu). 
+Since Tensorflow requires GPU for training, this setup only allows for inference.
 Not tested on windows or Mac.
 ### Current version: (May 2020 - the year of COVID19)
 * Python 3.8.2
@@ -41,4 +42,4 @@ python3 dockercam.py
 You should see the camera view open up in a window
 Press q to quit.
 
-To upgrade just do a docker pull randhawp/opencv-python
+To upgrade just do a docker pull randhawp/opencv-python:latest
