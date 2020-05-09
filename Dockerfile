@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8.2
 MAINTAINER  Puneet Randhawa <randhawa.puneet@gmail.com>
 
 RUN apt-get update \
@@ -23,6 +23,8 @@ RUN apt-get update \
 
 RUN pip install numpy scipy pandas matplotlib
 RUN pip install pafy youtube_dl
+RUN pip3 install -U virtualenv
+RUN pip install --upgrade tensorflow
 
 WORKDIR /
 ENV OPENCV_VERSION="4.3.0"
@@ -43,14 +45,14 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
   -DWITH_GTK=ON \
   -DBUILD_PERF_TESTS=OFF \
   -DCMAKE_BUILD_TYPE=RELEASE \
-  -DCMAKE_INSTALL_PREFIX=$(python3.7 -c "import sys; print(sys.prefix)") \
-  -DPYTHON_EXECUTABLE=$(which python3.7) \
-  -DPYTHON_INCLUDE_DIR=$(python3.7 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
-  -DPYTHON_PACKAGES_PATH=$(python3.7 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+  -DCMAKE_INSTALL_PREFIX=$(python3.8.2 -c "import sys; print(sys.prefix)") \
+  -DPYTHON_EXECUTABLE=$(which python3.8.2) \
+  -DPYTHON_INCLUDE_DIR=$(python3.8.2 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+  -DPYTHON_PACKAGES_PATH=$(python3.8.2 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
   .. \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION}
 RUN ln -s \
-  /usr/local/python/cv2/python-3.7/cv2.cpython-37m-x86_64-linux-gnu.so \
-  /usr/local/lib/python3.7/site-packages/cv2.so
+  /usr/local/python/cv2/python-3.8.2/cv2.cpython-37m-x86_64-linux-gnu.so \
+  /usr/local/lib/python3.8.2/site-packages/cv2.so
