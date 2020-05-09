@@ -10,6 +10,7 @@ RUN apt-get update \
         unzip \
         yasm \
         pkg-config \
+        python3-dev \
         libswscale-dev \
         libtbb2 \
         libtbb-dev \
@@ -20,7 +21,14 @@ RUN apt-get update \
         libpq-dev \
         libgtk2.0-dev \
     && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && \
+	apt-get upgrade -y && \
+ 	apt-get install -y gstreamer-1.0* && \
+  	apt-get install -y aptitude && \
+ 	cpan Data::Dumper && \
+	apt-get install -y vim && \
+	apt-get install -y ffmpeg	&& \
+	apt-get install -y imagemagick
 RUN pip install numpy scipy pandas matplotlib
 RUN pip install pafy youtube_dl
 RUN pip3 install -U virtualenv
@@ -45,14 +53,14 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
   -DWITH_GTK=ON \
   -DBUILD_PERF_TESTS=OFF \
   -DCMAKE_BUILD_TYPE=RELEASE \
-  -DCMAKE_INSTALL_PREFIX=$(python3.8.2 -c "import sys; print(sys.prefix)") \
+  -DCMAKE_INSTALL_PREFIX=$(python3.8 -c "import sys; print(sys.prefix)") \
   -DPYTHON_EXECUTABLE=$(which python3.8.2) \
-  -DPYTHON_INCLUDE_DIR=$(python3.8.2 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
-  -DPYTHON_PACKAGES_PATH=$(python3.8.2 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+  -DPYTHON_INCLUDE_DIR=$(python3.8 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+  -DPYTHON_PACKAGES_PATH=$(python3.8 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
   .. \
 && make install \
 && rm /${OPENCV_VERSION}.zip \
 && rm -r /opencv-${OPENCV_VERSION}
 RUN ln -s \
-  /usr/local/python/cv2/python-3.8.2/cv2.cpython-382m-x86_64-linux-gnu.so \
-  /usr/local/lib/python3.8.2/site-packages/cv2.so
+  /usr/local/python/cv2/python-3.8/cv2.cpython-38m-x86_64-linux-gnu.so \
+  /usr/local/lib/python3.8/site-packages/cv2.so
