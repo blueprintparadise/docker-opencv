@@ -19,7 +19,7 @@ RUN apt-get update \
         libtiff-dev \
         libavformat-dev \
         libpq-dev \
-        libgtk2.0-dev \
+        libgtk3.0-dev \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
 	apt-get upgrade -y && \
