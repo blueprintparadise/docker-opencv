@@ -19,7 +19,8 @@ RUN apt-get update \
         libtiff-dev \
         libavformat-dev \
         libpq-dev \
-        libgtk3.0 \
+	libgtk2.0-dev \
+        python-opengl \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
 	apt-get upgrade -y && \
