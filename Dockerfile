@@ -41,6 +41,7 @@ RUN pip install 'pyglet==1.5.5'
 RUN pip install pyvirtualdisplay
 RUN pip install --upgrade tensorflow-probability
 RUN pip install tf-agents
+RUN pip install ipython
 
 WORKDIR /
 ENV OPENCV_VERSION="4.3.0"
