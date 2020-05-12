@@ -20,7 +20,14 @@ RUN apt-get update \
         libavformat-dev \
         libpq-dev \
 	libgtk2.0-dev \
+	qtbase5-dev \
+	libqt5opengl5-dev \
+	libassimp-dev \
         python-opengl \
+	x11vnc \
+	xvfb \
+	fluxbox \
+	wmctrl
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
 	apt-get upgrade -y && \
@@ -30,7 +37,7 @@ RUN apt-get update && \
 	apt-get install -y vim && \
 	apt-get install -y ffmpeg	&& \
 	apt-get install -y imagemagick
-RUN pip install numpy scipy pandas matplotlib
+RUN pip install numpy scipy pandas matplotlib jupyter seaborn scikit-learn scikit-Image sympy cython patsy statsmodels cloudpickle dill 
 RUN pip install pafy youtube_dl
 RUN pip3 install -U virtualenv
 RUN pip install --upgrade tensorflow
@@ -73,3 +80,10 @@ RUN wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip \
 RUN ln -s \
   /usr/local/python/cv2/python-3.8/cv2.cpython-38m-x86_64-linux-gnu.so \
   /usr/local/lib/python3.8/site-packages/cv2.so
+
+# TensorBoard
+EXPOSE 6006
+# IPython
+EXPOSE 8888
+# VNC Server
+EXPOSE 5900
