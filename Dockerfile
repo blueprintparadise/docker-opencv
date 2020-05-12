@@ -27,7 +27,7 @@ RUN apt-get update \
 	x11vnc \
 	xvfb \
 	fluxbox \
-	wmctrl
+	wmctrl \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
 	apt-get upgrade -y && \
