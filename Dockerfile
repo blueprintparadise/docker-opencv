@@ -49,6 +49,7 @@ RUN pip install pyvirtualdisplay
 RUN pip install --upgrade tensorflow-probability
 RUN pip install tf-agents
 RUN pip install ipython
+RUN pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
 
 WORKDIR /
 ENV OPENCV_VERSION="4.3.0"
