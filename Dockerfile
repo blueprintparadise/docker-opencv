@@ -28,6 +28,7 @@ RUN apt-get update \
 	xvfb \
 	fluxbox \
 	wmctrl \
+	swig3.0 \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
 	apt-get upgrade -y && \
