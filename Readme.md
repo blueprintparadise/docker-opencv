@@ -10,6 +10,9 @@ Not tested on windows or Mac.
 * scipy 1.4.1
 * Matplotlib 3.2.1
 * FFmpeg 4.1.4-1
+* sklearn 0.23.0
+* seaborn 0.10.1
+* openai gym 0.17.2
 
 # Setup
 1) Download the docker image on your PC
