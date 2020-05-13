@@ -46,6 +46,7 @@ RUN pip install 'imageio==2.8.0'
 RUN pip install PILLOW
 RUN pip install 'pyglet==1.5.5'
 RUN pip install pyvirtualdisplay
+RUN pip install cffi
 RUN pip install --upgrade tensorflow-probability
 RUN pip install tf-agents
 RUN pip install ipython
