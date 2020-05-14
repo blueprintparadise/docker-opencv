@@ -84,9 +84,13 @@ RUN ln -s \
   /usr/local/python/cv2/python-3.8/cv2.cpython-38m-x86_64-linux-gnu.so \
   /usr/local/lib/python3.8/site-packages/cv2.so
 
+ENV PATH="/opt/scripts/:${PATH}"
+COPY setups.sh chmod +x /opt/scripts/
 # TensorBoard
 EXPOSE 6006
 # IPython
 EXPOSE 8888
 # VNC Server
 EXPOSE 5900
+
+ENTRYPOINT ["/opt/scripts/setups.sh"]
