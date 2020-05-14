@@ -44,8 +44,9 @@ RUN pip3 install -U virtualenv
 RUN pip install --upgrade tensorflow
 RUN pip install cffi
 RUN pip install 'pyglet==1.5.5'
-RUN pip install 'gym[all]==0.17.2' 
+RUN pip install 'gym==0.17.2' 
 RUN pip install 'imageio==2.8.0'
+RUN pip3 install box2d-py
 RUN pip install PILLOW
 RUN pip install pyvirtualdisplay
 RUN pip install --upgrade tensorflow-probability
