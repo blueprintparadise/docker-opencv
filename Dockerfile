@@ -29,7 +29,13 @@ RUN apt-get update \
 	fluxbox \
 	wmctrl \
 	swig3.0 \
+	python-numpy \
+	zlib1g-dev \
+	xorg-dev \
+	libboost-all-dev \
+	libsdl2-dev \ 
     && rm -rf /var/lib/apt/lists/*
+	 
 RUN apt-get update && \
 	apt-get upgrade -y && \
  	apt-get install -y gstreamer-1.0* && \
@@ -51,7 +57,7 @@ RUN pip install pyvirtualdisplay
 RUN pip install --upgrade tensorflow-probability
 RUN pip install tf-agents
 RUN pip install ipython
-
+RUN pip install 'gym[atari]'
 
 WORKDIR /
 ENV OPENCV_VERSION="4.3.0"
