@@ -13,6 +13,7 @@ Not tested on windows or Mac.
 * sklearn 0.23.0
 * seaborn 0.10.1
 * openai gym 0.17.2
+* pytorch 1.5.0
 
 # Setup
 1) Download the docker image on your PC
