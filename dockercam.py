@@ -1,3 +1,5 @@
+# Script to test access to webcam  for opencv
+# make sure the docker container started with -d /dev/vide0:/dev/video0
 import numpy as np
 import cv2
 
