@@ -95,6 +95,15 @@ ENV PATH="/opt/scripts/:${PATH}"
 COPY *.py  /examples/
 COPY *.sh /usr/bin/
 
+#alternatives to TF
+RUN pip install torch torchvision
+
+
+#install all other RL envs here
+RUN mkdir /home/unity 
+RUN cd /home/unity         
+         
+
 # TensorBoard
 EXPOSE 6006
 # IPython
