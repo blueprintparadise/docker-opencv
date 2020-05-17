@@ -98,13 +98,14 @@ COPY *.sh /usr/bin/
 #alternatives to TF
 RUN pip install torch torchvision
 RUN pip install gym-gridworlds
+RUN pip install tensorboardX
 
 #install all other RL envs here
 RUN mkdir /home/gridworld
 RUN cd /home/gridworld
 RUN git clone https://github.com/maximecb/gym-minigrid.git
-RUN cd gym-minigrid
-RUN pip3 install -e .
+
+
 
          
 
@@ -113,7 +114,7 @@ EXPOSE 6006
 # IPython
 EXPOSE 8888
 # VNC Server
-EXPOSE 5900
+EXPOSE 5920
 
  
 
