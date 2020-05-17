@@ -99,11 +99,12 @@ COPY *.sh /usr/bin/
 RUN pip install torch torchvision
 RUN pip install gym-gridworlds
 RUN pip install tensorboardX
+RUN pip install gym-minigrid
 
 #install all other RL envs here
-RUN mkdir /home/gridworld
-RUN cd /home/gridworld
-RUN git clone https://github.com/maximecb/gym-minigrid.git
+#RUN mkdir /home/gridworld
+#RUN cd /home/gridworld
+#RUN git clone https://github.com/maximecb/gym-minigrid.git
 
 
 
