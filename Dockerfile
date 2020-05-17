@@ -97,11 +97,15 @@ COPY *.sh /usr/bin/
 
 #alternatives to TF
 RUN pip install torch torchvision
-
+RUN pip install gym-gridworlds
 
 #install all other RL envs here
-RUN mkdir /home/unity 
-RUN cd /home/unity         
+RUN mkdir /home/gridworld
+RUN cd /home/gridworld
+RUN git clone https://github.com/maximecb/gym-minigrid.git
+RUN cd gym-minigrid
+RUN pip3 install -e .
+
          
 
 # TensorBoard
