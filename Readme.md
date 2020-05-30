@@ -34,7 +34,7 @@ xhost +
 ```
 5) Run the container
 ```
-sudo docker run -it -v my-vol:/home --device=/dev/video0:/dev/video0  -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix --name testbench randhawp/opencv-python sh
+sudo docker run -it -v my-vol:/home --device=/dev/video0:/dev/video0  -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix --name testbench randhawp/opencv-python bash
 ```
 6) Inside the container shell
 ```
