@@ -36,14 +36,14 @@ xhost +
 ```
 sudo docker run -it -v my-vol:/home --device=/dev/video0:/dev/video0  -e DISPLAY=$DISPLAY  -v /tmp/.X11-unix:/tmp/.X11-unix --name testbench randhawp/opencv-python bash
 ```
-6) Inside the container shell
-```
-cd /home
-python3 dockercam.py
+6) Inside the container shell, goto  /examples
 
-```
+- to test camera : dockercam.py (press q to exit)
+- to test a videofor opencv from youtube : youtube.py (press q to exit )
+- to test the gym environment : cartpole0.py
+- to test gym atari env :atari0.py
+- to test TF2.0 / Keras training and prediction example: tf-image-0.py
 
-You should see the camera view open up in a window
-Press q to quit.
+
 
 To upgrade just do a docker pull randhawp/opencv-python:latest
