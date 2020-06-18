@@ -106,8 +106,9 @@ RUN pip install gym-minigrid
 #RUN cd /home/gridworld
 #RUN git clone https://github.com/maximecb/gym-minigrid.git
 
-
-
+#some helper tools
+RUN pip install terminaltables
+RUN pip install tqdm
          
 
 # TensorBoard
